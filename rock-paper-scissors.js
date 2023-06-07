@@ -10,7 +10,6 @@ function game() {
     function getComputerChoice() {
         const computerChoices = ["rock", "paper", "scissors"];
         let randomChoice = Math.floor(Math.random() * 3);
-        console.log(computerChoices[randomChoice]);
         return computerChoices[randomChoice];
     }
     
