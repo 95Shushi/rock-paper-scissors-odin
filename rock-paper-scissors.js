@@ -1,11 +1,3 @@
-let computerScore = 0;
-let playerScore = 0;
-
-for (let i = 0; i < 5; i++) { 
-    game();
-    console.log(`Player:${playerScore}, Computer:${computerScore}`);
-}
-
 function game() {
     function getComputerChoice() {
         const computerChoices = ["rock", "paper", "scissors"];
@@ -67,3 +59,23 @@ function game() {
         computerScore++;
     }
 }
+
+function checkTotal() {
+    if (playerScore > computerScore) {
+        console.log("You Won the Game!")
+    } else if (playerScore < computerScore) {
+        console.log("You Lost the Game! The PC Won!")
+    } else {
+        console.log("It's a Draw! Peace between the human and the machine")
+    }
+}
+
+let computerScore = 0;
+let playerScore = 0;
+
+for (let i = 0; i < 5; i++) { 
+    game();
+    console.log(`Player:${playerScore}, Computer:${computerScore}`);
+}
+
+checkTotal()
