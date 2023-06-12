@@ -73,9 +73,19 @@ function checkTotal() {
 let computerScore = 0;
 let playerScore = 0;
 
-for (let i = 0; i < 5; i++) { 
-    game();
-    console.log(`Player:${playerScore}, Computer:${computerScore}`);
-}
+// game()
 
-checkTotal()
+// for (let i = 0; i < 5; i++) { 
+//     game();
+//     console.log(`Player:${playerScore}, Computer:${computerScore}`);
+// }
+
+// checkTotal()
+
+let buttons = document.querySelectorAll("button")
+
+buttons.forEach((button) => {
+    button.addEventListener("click", function() {
+        console.log(this.innerHTML.toLowerCase());
+    });
+});
