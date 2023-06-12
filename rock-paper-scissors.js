@@ -45,7 +45,7 @@ function game() {
     }
 
     let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Type in your choice: Rock, Paper or Scissors?").toLowerCase();
+    let playerSelection = this.textContent.toLowerCase();
     let result = "";
 
     console.log(`${playRound(playerSelection, computerSelection)}`);
@@ -73,8 +73,6 @@ function checkTotal() {
 let computerScore = 0;
 let playerScore = 0;
 
-// game()
-
 // for (let i = 0; i < 5; i++) { 
 //     game();
 //     console.log(`Player:${playerScore}, Computer:${computerScore}`);
@@ -85,7 +83,5 @@ let playerScore = 0;
 let buttons = document.querySelectorAll("button")
 
 buttons.forEach((button) => {
-    button.addEventListener("click", function() {
-        console.log(this.innerHTML.toLowerCase());
-    });
+    button.addEventListener("click", game)
 });
