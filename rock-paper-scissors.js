@@ -48,7 +48,8 @@ function game() {
     let playerSelection = this.textContent.toLowerCase();
     let result = "";
 
-    console.log(`${playRound(playerSelection, computerSelection)}`);
+    resultDiv = document.querySelector("#result")
+    resultDiv.textContent = `${playRound(playerSelection, computerSelection)}`
 
     if (result === "W") {
         playerScore++;

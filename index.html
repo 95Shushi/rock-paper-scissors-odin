@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Console Rock Paper Scissors</title>
+    <style>
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #result {
+            text-align: center;
+            min-height: 30px;
+        }
+    </style>
     <script src="rock-paper-scissors.js" defer></script>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+    <div id="result">Play Rock-Paper-Scissors against a computer! Please press a button!</div>
+    <div class="buttons">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissors</button>
+    </div>
 </body>
 </html>
