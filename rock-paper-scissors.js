@@ -44,6 +44,16 @@ function playGame() {
         }
     }
 
+    function checkTotal() {
+        if (playerScore > computerScore) {
+            return "You Won the Game!"
+        } else if (playerScore < computerScore) {
+            return "You Lost the Game! The PC Won!"
+        } else {
+            return "It's a Draw! Peace between the human and the machine"
+        }
+    }
+
     let computerSelection = getComputerChoice();
     let playerSelection = this.textContent.toLowerCase();
     let result = "";
@@ -61,29 +71,20 @@ function playGame() {
     }
 
     scoreDiv = document.querySelector("#score")
-    scoreDiv.textContent = `Player:${playerScore}, Computer:${computerScore}`
 
-}
-
-function checkTotal() {
-    if (playerScore > computerScore) {
-        console.log("You Won the Game!")
-    } else if (playerScore < computerScore) {
-        console.log("You Lost the Game! The PC Won!")
+    if (playerScore < 5 && computerScore < 5) {
+        scoreDiv.textContent = `Player:${playerScore}, Computer:${computerScore}`
     } else {
-        console.log("It's a Draw! Peace between the human and the machine")
+        scoreDiv.textContent = `${checkTotal()}`
+        buttons.forEach((button) => {
+            button.disabled = true;
+        });
     }
+
 }
 
 let computerScore = 0;
 let playerScore = 0;
-
-// for (let i = 0; i < 5; i++) { 
-//     game();
-//     console.log(`Player:${playerScore}, Computer:${computerScore}`);
-// }
-
-// checkTotal()
 
 let buttons = document.querySelectorAll("button")
 
