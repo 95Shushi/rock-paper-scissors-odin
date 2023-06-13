@@ -1,4 +1,4 @@
-function game() {
+function playGame() {
     function getComputerChoice() {
         const computerChoices = ["rock", "paper", "scissors"];
         let randomChoice = Math.floor(Math.random() * 3);
@@ -59,6 +59,10 @@ function game() {
         playerScore++;
         computerScore++;
     }
+
+    scoreDiv = document.querySelector("#score")
+    scoreDiv.textContent = `Player:${playerScore}, Computer:${computerScore}`
+
 }
 
 function checkTotal() {
@@ -84,5 +88,5 @@ let playerScore = 0;
 let buttons = document.querySelectorAll("button")
 
 buttons.forEach((button) => {
-    button.addEventListener("click", game)
+    button.addEventListener("click", playGame);
 });
